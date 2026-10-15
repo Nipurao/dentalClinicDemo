@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom clinic aesthetic classes */
+.theme-dental {
+  --color-primary: #0d9488;
+  --color-primary-hover: #0f766e;
+  --color-primary-light: #f0fdfa;
+  --color-accent: #10b981;
+  --color-surface: #ffffff;
+  --color-bg: #f8fafc;
+}
+
+.theme-skin {
+  --color-primary: #4a6b53;
+  --color-primary-hover: #354f3c;
+  --color-primary-light: #f4f7f4;
+  --color-accent: #c5a880;
+  --color-surface: #ffffff;
+  --color-bg: #fbf9f5;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom focus ring */
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+}
+
+.dental-focus {
+  @apply focus-visible:ring-teal-500 focus-visible:ring-offset-white;
+}
+
+.skin-focus {
+  @apply focus-visible:ring-skin-sage focus-visible:ring-offset-skin-50;
+}
